@@ -9,7 +9,7 @@
         <property name="hibernate.connection.password">
         </property>
         <property name="hibernate.connection.url">
-            jdbc:mysql://localhost:3306/bd
+            jdbc:mysql://localhost:3306/bd3
         </property>
         <property name="hibernate.connection.driver_class">
             org.mariadb.jdbc.Driver
@@ -25,6 +25,5 @@
         <mapping package="com.mapeamento.model"/>
         <mapping class="com.mapeamento.model.Endereco"/>
         <mapping class="com.mapeamento.model.Pessoa"/>
-        <mapping class="com.mapeamento.model.Telefone"/>
     </session-factory>
 </hibernate-configuration>

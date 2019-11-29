@@ -18,14 +18,22 @@ public class Pessoa {
     @Column(unique = true)
     private String cpf;
 
-    @ElementCollection
-    @Cascade(CascadeType.DELETE)
-    private List<Telefone> telefones;
+    private String telefone;
 
-    @ElementCollection
-    @Cascade(CascadeType.DELETE)
-    private List<Endereco> enderecos;
+    @OneToOne
+    private Endereco enderecos;
 
+
+    public Pessoa(String nome, String sobrenome, String cpf, String telefone, Endereco enderecos) {
+        this.nome = nome;
+        this.sobrenome = sobrenome;
+        this.cpf = cpf;
+        this.telefone = telefone;
+        this.enderecos = enderecos;
+    }
+
+    public Pessoa() {
+    }
 
     public long getId() {
         return id;
@@ -57,6 +65,18 @@ public class Pessoa {
 
     public void setCpf(String cpf) {
         this.cpf = cpf;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public Endereco getEndereco() {
+        return enderecos;
     }
 }
 
